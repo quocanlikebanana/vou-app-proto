@@ -1,7 +1,11 @@
 {
-  "name": "vou-app-proto",
+  "name": "@quocanlikebanana/vou-app-proto",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quocanlikebanana/vou-app-proto.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:clean": "rimraf dist",
