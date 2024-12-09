@@ -6,7 +6,11 @@
     "type": "git",
     "url": "https://github.com/quocanlikebanana/vou-app-proto.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
+    "protoc": "npx protoc --plugin=$(npm root)\\.bin\\protoc-gen-ts_proto --ts_proto_out=dist --ts_proto_opt=outputServices=grpc-js --ts_proto_opt=esModuleInterop=true -I=proto proto\\**\\*.proto",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:clean": "rimraf dist",
     "build:prepare-dist": "mkdirp dist",
@@ -15,8 +19,8 @@
     "build:compile-ts": "tsc",
     "build:unix:copy": "cp -r proto ./dist/proto",
     "build:unix": "npm run build:clean && npm run build:prepare-dist && npm run build:unix:make-executatble && npm run build:unix:run-script && npm run build:compile-ts && npm run build:unix:copy",
-    "build:win:make-executatble": "wsl chmod +x ./build.sh",
-    "build:win:run-script": "wsl ./build.sh",
+    "build:win:make-executatble": "chmod +x ./build.sh",
+    "build:win:run-script": "./build.sh",
     "build:win:copy": "xcopy proto dist\\proto /E /I",
     "build:win": "npm run build:clean && npm run build:prepare-dist && npm run build:win:make-executatble && npm run build:win:run-script && npm run build:compile-ts && npm run build:win:copy"
   },
