@@ -4,12 +4,12 @@ package event;
 
 service PingService {
     rpc Ping(Empty) returns (Pong);
-    rpc PingWithMessage(Ping) returns (Pong);
+    rpc PingWithMessage(Message) returns (Pong);
 }
 
 message Empty {}
 
-message Ping {
+message Message {
     string message = 1;
 }
 
