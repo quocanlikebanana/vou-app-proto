@@ -3,10 +3,30 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:clean": "rimraf dist",
+    "build:prepare-dist": "mkdirp dist",
+    "build:unix:make-executatble": "chmod +x ./build.sh",
+    "build:unix:run-script": "./build.sh",
+    "build:compile-ts": "tsc",
+    "build:unix:copy": "cp -r proto ./dist/proto",
+    "build:unix": "npm run build:clean && npm run build:prepare-dist && npm run build:unix:make-executatble && npm run build:unix:run-script && npm run build:compile-ts && npm run build:unix:copy",
+    "build:win:run-script": "sh ./build.sh",
+    "build:win:copy": "xcopy proto dist\\src /E /I",
+    "build:win": "npm run build:clean && npm run build:prepare-dist && npm run build:win:run-script && npm run build:compile-ts && npm run build:win:copy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "mkdirp": "^3.0.1",
+    "rimraf": "^6.0.1",
+    "ts-proto": "^2.5.1",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.12.4",
+    "protobufjs": "^7.4.0"
+  }
 }
