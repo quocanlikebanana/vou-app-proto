@@ -11,9 +11,10 @@
     "build:compile-ts": "tsc",
     "build:unix:copy": "cp -r proto ./dist/proto",
     "build:unix": "npm run build:clean && npm run build:prepare-dist && npm run build:unix:make-executatble && npm run build:unix:run-script && npm run build:compile-ts && npm run build:unix:copy",
-    "build:win:run-script": "sh ./build.sh",
+    "build:win:make-executatble": "wsl chmod +x ./build.sh",
+    "build:win:run-script": "wsl ./build.sh",
     "build:win:copy": "xcopy proto dist\\proto /E /I",
-    "build:win": "npm run build:clean && npm run build:prepare-dist && npm run build:win:run-script && npm run build:compile-ts && npm run build:win:copy"
+    "build:win": "npm run build:clean && npm run build:prepare-dist && npm run build:win:make-executatble && npm run build:win:run-script && npm run build:compile-ts && npm run build:win:copy"
   },
   "keywords": [],
   "author": "",
