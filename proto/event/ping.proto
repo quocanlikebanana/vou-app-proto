@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package event;
+
+service PingService {
+    rpc Ping(Empty) returns (Pong);
+    rpc PingWithMessage(Ping) returns (Pong);
+}
+
+message Empty {}
+
+message Ping {
+    string message = 1;
+}
+
+message Pong {
+    string message = 1;
+}
