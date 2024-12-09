@@ -1,6 +1,6 @@
 {
   "name": "@quocanlikebanana/vou-app-proto",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -22,7 +22,8 @@
     "build:win:make-executatble": "chmod +x ./build.sh",
     "build:win:run-script": "./build.sh",
     "build:win:copy": "xcopy proto dist\\proto /E /I",
-    "build:win": "npm run build:clean && npm run build:prepare-dist && npm run build:win:make-executatble && npm run build:win:run-script && npm run build:compile-ts && npm run build:win:copy"
+    "build:win": "npm run build:clean && npm run build:prepare-dist && npm run build:win:make-executatble && npm run build:win:run-script && npm run build:compile-ts && npm run build:win:copy",
+    "release": "standard-version"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "mkdirp": "^3.0.1",
     "rimraf": "^6.0.1",
+    "standard-version": "^9.5.0",
     "ts-proto": "^2.5.1",
     "typescript": "^5.7.2"
   },
