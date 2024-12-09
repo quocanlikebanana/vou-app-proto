@@ -12,7 +12,7 @@
     "build:unix:copy": "cp -r proto ./dist/proto",
     "build:unix": "npm run build:clean && npm run build:prepare-dist && npm run build:unix:make-executatble && npm run build:unix:run-script && npm run build:compile-ts && npm run build:unix:copy",
     "build:win:run-script": "sh ./build.sh",
-    "build:win:copy": "xcopy proto dist\\src /E /I",
+    "build:win:copy": "xcopy proto dist\\proto /E /I",
     "build:win": "npm run build:clean && npm run build:prepare-dist && npm run build:win:run-script && npm run build:compile-ts && npm run build:win:copy"
   },
   "keywords": [],
