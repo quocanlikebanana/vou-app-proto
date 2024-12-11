@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package game;
+
+service VariantsService {
+    rpc GetVariants (Empty) returns (VariantsList);
+    rpc GetVariant (GetVariantRequest) returns (Variant);
+    rpc AddVariant (Variant) returns (Empty);
+    rpc UpdateVariant (Variant) returns (Empty);
+    rpc RemoveVariant (RemoveVariantRequest) returns (Empty);
+}
+
+message Empty {}
+
+message GetVariantRequest {
+    string token = 1;
+}
+
+message RemoveVariantRequest {
+    string token = 1;
+}
+
+message Variant {
+    string token = 1;
+    string name = 2;
+    string description = 3;
+}
+
+message VariantsList {
+    repeated Variant variants = 1;
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package event;
+
+message ApproveEventParam = {
+    string id = 1;
+}
+
+message ApproveEventResponse = {
+    bool success = 1;
+}
+
+service EventService {
+    rpc ApproveEvent(ApproveEventParam) returns (ApproveEventResponse);
+}
