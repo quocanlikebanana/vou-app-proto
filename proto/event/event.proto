@@ -2,11 +2,11 @@ syntax = "proto3";
 
 package event;
 
-message ApproveEventParam = {
+message ApproveEventParam {
     string id = 1;
 }
 
-message ApproveEventResponse = {
+message ApproveEventResponse {
     bool success = 1;
 }
 
