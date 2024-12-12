@@ -23,7 +23,8 @@
     "build:win:run-script": "./build.sh",
     "build:win:copy": "xcopy proto dist\\proto /E /I",
     "build:win": "npm run build:clean && npm run build:prepare-dist && npm run build:win:make-executatble && npm run build:win:run-script && npm run build:compile-ts && npm run build:win:copy",
-    "release": "standard-version"
+    "release": "standard-version",
+    "upload": "upload.bat"
   },
   "keywords": [],
   "author": "",
